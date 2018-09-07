@@ -1,0 +1,22 @@
+<div *ngIf="users">
+  <table datatable class="table">
+    <thead>
+    <tr>
+      <th>User ID's</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>
+        <button (click)="goToProfile(user)" class="btn btn-primary"> Show more info <i class="fas fa-info-circle"></i>
+        </button>
+      </td>
+    </tr>
+
+    </tbody>
+
+  </table>
+</div>
+

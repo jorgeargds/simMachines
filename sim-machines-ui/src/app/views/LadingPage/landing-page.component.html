@@ -1,0 +1,19 @@
+<div *ngIf="topTenUser">
+  <h4 class="pull-left">PART A
+    <small>The 10 users that have listened to “the beatles” the most times.</small>
+  </h4>
+  <app-custom-table [users]="topTenUser"></app-custom-table>
+</div>
+
+<div *ngIf="mostPopularBand">
+  <h4 class="pull-left">PART B
+    <h5>Most popular band is: <b>{{mostPopularBand.name}}</b></h5>
+    <small>The most popular band in the data-set.</small>
+  </h4>
+  <app-custom-table [users]="mostPopularBand.users"></app-custom-table>
+</div>
+
+<h4 class="pull-left">PART C
+  <small>The two users who share the largest amount of bands (ignoring frequencies).</small>
+</h4>
+

@@ -1,0 +1,36 @@
+<ng-template *ngIf="user;then userBlock else elseBlock"></ng-template>
+<ng-template
+  #userBlock>
+  <div class="row">
+    <div class="col-md-2">
+      <p>User ID:</p>
+    </div>
+    <div class="col-md-10">
+      <span>{{user.id}}</span>
+    </div>
+  </div>
+
+  <h4>User bands</h4>
+
+  <table datatable class="table">
+    <thead>
+    <tr>
+      <th>Band name</th>
+      <th>Frequencies</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let band of user.bands; index as i">
+        <td>{{band}}</td>
+        <td>{{user.frequencies[i]}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</ng-template>
+<ng-template #elseBlock>
+  <h3>Ooops something went wrong, user not found! Please navigate back and select another user</h3>
+</ng-template>
+
+<button class="btn btn-danger pull-left" (click)="navigateBack()">Go back</button>
+
